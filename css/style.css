@@ -1,9 +1,35 @@
 #wrapper{
     background-color: rgb(245, 243, 243);
-    width: 500px;
-    height: 720;
+    width: 300px;
+    height: 425px;
+    /*padding: 5px;*/
+}
+#screen{
+    float: right;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 50px;
+    background-color: rgb(120, 148, 129)
+}
+#buttons{
+    /*text-align: center;*/
+    padding: 6px;
+    
+
+}
+#equals{
+    float:right;
+}
+#clear{
+    background-color: rgb(173, 77, 77);
 }
 .button{
     background-color: rgb(74, 72, 90);
     color: white;
+    width: 60px;
+    height: 60px;
+    margin: 6px 6px;
+    float: left;
 }
