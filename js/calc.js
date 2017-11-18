@@ -50,6 +50,7 @@ $(document).ready(function(){
                 }else if(elements[i] === op1 && op1 === "+" || elements[i] === op2 && op2 === "-"){
                     switch (elements[i]){
                         //This is a comment
+                        //This is another comment
                         case op1: elements[i] = parseInt(elements[i-1]) + parseInt(elements[i+1]);
                         elements.splice(i-1, 1);
                         elements.splice(i, 1);
