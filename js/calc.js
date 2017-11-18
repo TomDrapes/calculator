@@ -30,30 +30,53 @@ $(document).ready(function(){
         var elements = equation.split("~");
         console.log(elements);
 
-        //for(var i=0; i<elements.length; i++){
-        var i = 0;
-        while(elements.includes("&times") || elements.includes("&divide")){
-            //debugger;
-            if(elements[i] === "&times" || elements[i] === "&divide"){
-                switch (elements[i]){
-                    case "&times": elements[i] = elements[i-1] * elements[i+1];
-                    elements.splice(i-1, 1);
-                    elements.splice(i, 1);
-                    console.log(elements);
-                    break;
-                    case "&divide": elements[i]= elements[i-1] / elements[i+1];
-                    elements.splice(i-1, 1);
-                    elements.splice(i, 1);
-                    console.log(elements);
-                    break;
-
+        function orderOperations(op1, op2){
+            var i = 0;
+            while(elements.includes(op1) || elements.includes(op2)){
+                //debugger;
+                if(elements[i] === op1 && op1 === "&times" || elements[i] === op2 && op2 === "&divide"){
+                    switch (elements[i]){
+                        case op1: elements[i] = elements[i-1] * elements[i+1];
+                        elements.splice(i-1, 1);
+                        elements.splice(i, 1);
+                        console.log(elements);
+                        i=0;
+                        break;
+                        case op2: elements[i]= elements[i-1] / elements[i+1];
+                        elements.splice(i-1, 1);
+                        elements.splice(i, 1);
+                        console.log(elements);
+                        i=0;                      
+                        break;
+                    }
+                }else if(elements[i] === op1 && op1 === "+" || elements[i] === op2 && op2 === "-"){
+                    switch (elements[i]){
+                        case op1: elements[i] = parseInt(elements[i-1]) + parseInt(elements[i+1]);
+                        elements.splice(i-1, 1);
+                        elements.splice(i, 1);
+                        console.log(elements);
+                        i=0;
+                        break;
+                        case op2: elements[i]= parseInt(elements[i-1]) - parseInt(elements[i+1]);
+                        elements.splice(i-1, 1);
+                        elements.splice(i, 1);
+                        console.log(elements);
+                        i=0                     
+                        break;
+                    }
+                }
+                i++;
+                if(i>elements.length){
+                    i=0;
                 }
             }
-            i++;
-            if(i>elements.length){
-                i=0;
-            }
         }
+        orderOperations("&times", "&divide");
+        orderOperations("+", "-");
+        //debugger;
         display = elements[0];
+        console.log("el: "+elements+" eq: "+equation);
+
+        equation = elements[0];
     }
 });
