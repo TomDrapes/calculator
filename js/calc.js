@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     $("button").click(function(){
         console.log($(this).val());
+        //$(this).css("border-bottom", "0px");
         switch ($(this).val()){
             case "ac": equation = ""; display = "";
             break;
@@ -23,6 +24,7 @@ $(document).ready(function(){
             default: equation += $(this).val(); display += $(this).val();
         }
         $("#screen").html(display);
+        
     });
 
     function calculate(){
@@ -75,5 +77,6 @@ $(document).ready(function(){
         orderOperations("+", "-");
         display = elements[0];        
         equation = elements[0];
+        $(this).css("border-bottom", "5px solid");
     }
 });

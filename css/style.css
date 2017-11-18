@@ -1,7 +1,8 @@
 body{
-    background-color: rgb(82, 82, 124);
+    /*background-color: rgb(82, 82, 124);*/
+    background-color: rgb(190, 228, 141);
     padding-left:40%;
-    padding-top: 10%;
+    padding-top: 8%;
     
 }
 
@@ -9,8 +10,11 @@ body{
     background-color: rgb(245, 243, 243);
     width: 300px;
     height: 444px;
-    padding: 5px 0px;
+    padding: 6px 0px;
     border-radius: 15px;
+    box-shadow: 10px 10px 5px rgb(97, 116, 72);
+    margin: 5px;
+    
     
 }
 h6{
@@ -37,15 +41,36 @@ h6{
     /*float:right;*/
     width:276px;
     height:40px;
+    
 }
 #clear{
     background-color: rgb(173, 77, 77);
+    border-bottom: 5px solid;
+    border-bottom-color: rgb(139, 62, 62);
+}
+#clear:active{
+    border-bottom: 0px;
 }
 .button{
-    background-color: rgb(74, 72, 90);
+    background-color: rgb(93, 91, 114);
     color: white;
     width: 60px;
     height: 60px;
     margin: 6px 6px;
     float: left;
+    border-bottom: 5px solid;
+    border-bottom-color: rgb(74, 72, 90);
+}
+.button:active{
+    border-bottom: 0px;
+    
+}
+#footer{
+    float: left;
+    padding-left: 80px;
+}
+
+a{
+    color: rgb(173, 77, 77);
+    font-weight: bold;
 }
