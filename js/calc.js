@@ -26,14 +26,12 @@ $(document).ready(function(){
     });
 
     function calculate(){
-        console.log("calculating...");
-        var elements = equation.split("~");
-        console.log(elements);
 
+        var elements = equation.split("~");
+        
         function orderOperations(op1, op2){
             var i = 0;
-            while(elements.includes(op1) || elements.includes(op2)){
-                //debugger;
+            while(elements.includes(op1) || elements.includes(op2)){                
                 if(elements[i] === op1 && op1 === "&times" || elements[i] === op2 && op2 === "&divide"){
                     switch (elements[i]){
                         case op1: elements[i] = elements[i-1] * elements[i+1];
@@ -51,6 +49,7 @@ $(document).ready(function(){
                     }
                 }else if(elements[i] === op1 && op1 === "+" || elements[i] === op2 && op2 === "-"){
                     switch (elements[i]){
+                        //This is a comment
                         case op1: elements[i] = parseInt(elements[i-1]) + parseInt(elements[i+1]);
                         elements.splice(i-1, 1);
                         elements.splice(i, 1);
@@ -73,10 +72,7 @@ $(document).ready(function(){
         }
         orderOperations("&times", "&divide");
         orderOperations("+", "-");
-        //debugger;
-        display = elements[0];
-        console.log("el: "+elements+" eq: "+equation);
-
+        display = elements[0];        
         equation = elements[0];
     }
 });
