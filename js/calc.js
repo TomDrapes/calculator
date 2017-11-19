@@ -5,26 +5,26 @@ $(document).ready(function(){
 
     $("button").click(function(){
         console.log($(this).val());
-        //$(this).css("border-bottom", "0px");
-        switch ($(this).val()){
-            case "ac": equation = ""; display = "";
-            break;
-            case "*": equation += '~&times~'; display += '&times';
-            break;
-            case "/": equation += '~&divide~'; display += '&divide';
-            break;
-            case "+": equation += '~+~'; display += '+';
-            break;
-            case "-": equation += '~-~'; display += '-';
-            break;
-            case ".": equation += '.'; display += '.';
-            break;
-            case "=": calculate();
-            break;
-            default: equation += $(this).val(); display += $(this).val();
-        }
-        $("#screen").html(display);
-        
+        if(equation.length < 14 || $(this).val() === "ac"){
+            switch ($(this).val()){
+                case "ac": equation = ""; display = "";
+                break;
+                case "*": equation += '~&times~'; display += '&times';
+                break;
+                case "/": equation += '~&divide~'; display += '&divide';
+                break;
+                case "+": equation += '~+~'; display += '+';
+                break;
+                case "-": equation += '~-~'; display += '-';
+                break;
+                case ".": equation += '.'; display += '.';
+                break;
+                case "=": calculate();
+                break;
+                default: equation += $(this).val(); display += $(this).val();
+            }
+            $("#screen").html(display);
+        }        
     });
 
     function calculate(){
@@ -75,8 +75,14 @@ $(document).ready(function(){
         }
         orderOperations("&times", "&divide");
         orderOperations("+", "-");
-        display = elements[0];        
-        equation = elements[0];
+        //debugger;
+        if(elements[0].toString().length > 14){
+            display = parseFloat(elements[0].toString().slice(0, 14));
+            equation = display;
+        }else{
+            display = elements[0];        
+            equation = elements[0];
+        }
         $(this).css("border-bottom", "5px solid");
     }
 });

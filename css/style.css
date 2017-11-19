@@ -19,6 +19,9 @@ body{
 }
 h6{
     margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    font-weight: bold;
     
 }
 #screen{
