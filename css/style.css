@@ -8,11 +8,13 @@ body{
 
 #wrapper{
     background-color: rgb(245, 243, 243);
-    width: 300px;
-    height: 444px;
+    width: 302px;
+    height: 476px;
     padding: 6px 0px;
+    /*border: 1px inset rgb(214, 214, 214);*/
     border-radius: 15px;
-    box-shadow: 10px 10px 5px rgb(97, 116, 72);
+    /*box-shadow: 10px 10px 5px rgb(97, 116, 72);*/
+    box-shadow:3px 3px 5px 2px rgb(196, 196, 196) inset, 10px 10px 5px rgb(97, 116, 72);
     margin: 5px;
     
     
@@ -33,8 +35,11 @@ h6{
     margin-bottom: 10px;
     padding: 3px 3px;
     width: 90%;
-    height: 50px;
-    background-color: rgb(120, 148, 129)
+    height: 80px;
+    background-color: rgb(120, 148, 129);
+    border: 2px inset rgb(90, 112, 97);
+    border-radius: 5px;
+    
 }
 #buttons{
     /*text-align: center;*/
