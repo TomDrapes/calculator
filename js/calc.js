@@ -4,14 +4,20 @@ $(document).ready(function(){
     console.log("connected");
 
     $("button").click(function(){
-        console.log($(this).val());
-        if(equation.length < 14 || $(this).val() === "ac"){
+        console.log("Value clicked: "+$(this).val());
+        console.log("Equation: "+equation);
+        console.log("type: "+typeof equation);
+        var split = equation.replace(/~/g, "");
+        console.log("split: "+split);
+
+        if(split.length < 13 || equation.length === undefined 
+            || $(this).val() === "ac" || $(this).val() === "="){
             switch ($(this).val()){
                 case "ac": equation = ""; display = "";
                 break;
-                case "*": equation += '~&times~'; display += '&times';
+                case "*": equation += '~*~'; display += '&times';
                 break;
-                case "/": equation += '~&divide~'; display += '&divide';
+                case "/": equation += '~/~'; display += '&divide';
                 break;
                 case "+": equation += '~+~'; display += '+';
                 break;
@@ -34,15 +40,15 @@ $(document).ready(function(){
         function orderOperations(op1, op2){
             var i = 0;
             while(elements.includes(op1) || elements.includes(op2)){                
-                if(elements[i] === op1 && op1 === "&times" || elements[i] === op2 && op2 === "&divide"){
+                if(elements[i] === op1 && op1 === "*" || elements[i] === op2 && op2 === "/"){
                     switch (elements[i]){
-                        case op1: elements[i] = elements[i-1] * elements[i+1];
+                        case op1: elements[i] = (elements[i-1] * elements[i+1]).toString();
                         elements.splice(i-1, 1);
                         elements.splice(i, 1);
                         console.log(elements);
                         i=0;
                         break;
-                        case op2: elements[i]= elements[i-1] / elements[i+1];
+                        case op2: elements[i]= (elements[i-1] / elements[i+1]).toString();
                         elements.splice(i-1, 1);
                         elements.splice(i, 1);
                         console.log(elements);
@@ -50,16 +56,14 @@ $(document).ready(function(){
                         break;
                     }
                 }else if(elements[i] === op1 && op1 === "+" || elements[i] === op2 && op2 === "-"){
-                    switch (elements[i]){
-                        //This is a comment
-                        //This is another comment
-                        case op1: elements[i] = parseInt(elements[i-1]) + parseInt(elements[i+1]);
+                    switch (elements[i]){                        
+                        case op1: elements[i] = (parseFloat(elements[i-1]) + parseFloat(elements[i+1])).toString();
                         elements.splice(i-1, 1);
                         elements.splice(i, 1);
                         console.log(elements);
                         i=0;
                         break;
-                        case op2: elements[i]= parseInt(elements[i-1]) - parseInt(elements[i+1]);
+                        case op2: elements[i]= (parseFloat(elements[i-1]) - parseFloat(elements[i+1])).toString();
                         elements.splice(i-1, 1);
                         elements.splice(i, 1);
                         console.log(elements);
@@ -73,16 +77,17 @@ $(document).ready(function(){
                 }
             }
         }
-        orderOperations("&times", "&divide");
+        orderOperations("*", "/");
         orderOperations("+", "-");
         //debugger;
         if(elements[0].toString().length > 14){
-            display = parseFloat(elements[0].toString().slice(0, 14));
-            equation = display;
+            display = elements[0].slice(0, 10);
+            equation = elements[0].slice(0, 10);
+            //console.log("here: "+ typeof equation);
         }else{
             display = elements[0];        
             equation = elements[0];
         }
-        $(this).css("border-bottom", "5px solid");
+        
     }
 });
