@@ -1,15 +1,9 @@
 $(document).ready(function(){
     var equation = "";
     var display = "";
-    console.log("connected");
 
     $("button").click(function(){
-        console.log("Value clicked: "+$(this).val());
-        console.log("Equation: "+equation);
-        console.log("type: "+typeof equation);
         var split = equation.replace(/~/g, "");
-        console.log("split: "+split);
-        
 
         if(split.length < 13 || equation.length === 0 
             || $(this).val() === "ac" || $(this).val() === "="){
@@ -55,14 +49,12 @@ $(document).ready(function(){
                     switch (elements[i]){
                         case op1: elements[i] = (elements[i-1] * elements[i+1]).toString();
                         elements.splice(i-1, 1);
-                        elements.splice(i, 1);
-                        console.log(elements);
+                        elements.splice(i, 1);                        
                         i=0;
                         break;
                         case op2: elements[i]= (elements[i-1] / elements[i+1]).toString();
                         elements.splice(i-1, 1);
-                        elements.splice(i, 1);
-                        console.log(elements);
+                        elements.splice(i, 1);                        
                         i=0;                      
                         break;
                     }
@@ -70,14 +62,12 @@ $(document).ready(function(){
                     switch (elements[i]){                        
                         case op1: elements[i] = (parseFloat(elements[i-1]) + parseFloat(elements[i+1])).toString();
                         elements.splice(i-1, 1);
-                        elements.splice(i, 1);
-                        console.log(elements);
+                        elements.splice(i, 1);                        
                         i=0;
                         break;
                         case op2: elements[i]= (parseFloat(elements[i-1]) - parseFloat(elements[i+1])).toString();
                         elements.splice(i-1, 1);
-                        elements.splice(i, 1);
-                        console.log(elements);
+                        elements.splice(i, 1);                        
                         i=0                     
                         break;
                     }
@@ -89,12 +79,10 @@ $(document).ready(function(){
             }
         }
         orderOperations("*", "/");
-        orderOperations("+", "-");
-        //debugger;
+        orderOperations("+", "-");        
         if(elements[0].toString().length > 14){
             display = elements[0].slice(0, 10);
-            equation = elements[0].slice(0, 10);
-            //console.log("here: "+ typeof equation);
+            equation = elements[0].slice(0, 10);            
         }else{
             display = elements[0];        
             equation = elements[0];
