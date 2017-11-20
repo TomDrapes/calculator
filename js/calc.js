@@ -9,21 +9,32 @@ $(document).ready(function(){
         console.log("type: "+typeof equation);
         var split = equation.replace(/~/g, "");
         console.log("split: "+split);
+        
 
-        if(split.length < 13 || equation.length === undefined 
+        if(split.length < 13 || equation.length === 0 
             || $(this).val() === "ac" || $(this).val() === "="){
             switch ($(this).val()){
                 case "ac": equation = ""; display = "";
                 break;
-                case "*": equation += '~*~'; display += '&times';
+                case "*": if(equation.charAt(equation.length-1) !== '~' &&
+                equation.charAt(equation.length-1) !== '.' && 
+                equation.length !== 0){equation += '~*~'; display += '&times'};
                 break;
-                case "/": equation += '~/~'; display += '&divide';
+                case "/": if(equation.charAt(equation.length-1) !== '~' &&
+                equation.charAt(equation.length-1) !== '.' && 
+                equation.length !== 0){equation += '~/~'; display += '&divide'};
                 break;
-                case "+": equation += '~+~'; display += '+';
+                case "+": if(equation.charAt(equation.length-1) !== '~' &&
+                equation.charAt(equation.length-1) !== '.' &&
+                equation.length !== 0){equation += '~+~'; display += '+'};
                 break;
-                case "-": equation += '~-~'; display += '-';
+                case "-": if(equation.charAt(equation.length-1) !== '~' &&
+                equation.charAt(equation.length-1) !== '.' &&
+                equation.length !== 0){equation += '~-~'; display += '-'};
                 break;
-                case ".": equation += '.'; display += '.';
+                case ".": if(equation.charAt(equation.length-1) !== '~' &&
+                equation.charAt(equation.length-1) !== '.' &&
+                equation.length !== 0){equation += '.'; display += '.'};
                 break;
                 case "=": calculate();
                 break;
