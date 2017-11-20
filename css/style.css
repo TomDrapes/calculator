@@ -2,7 +2,8 @@ body{
     /*background-color: rgb(82, 82, 124);*/
     /*background-color: rgb(190, 228, 141);*/
     background-color: rgb(20, 206, 209);
-    padding-left:40%;
+    
+    padding-left:38%;
     padding-top: 8%;
     
 }
@@ -81,10 +82,16 @@ h6{
 }
 #footer{
     float: left;
-    padding-left: 80px;
+    padding-left: 80px;    
 }
 
 a{
     color: rgb(173, 77, 77);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
     font-weight: bold;
+}
+a:hover{
+    color: white;
+    text-decoration: none;
 }
