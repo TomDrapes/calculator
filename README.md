@@ -3,7 +3,7 @@ by Tom Drapes
 ## FreeCodeCamp Advanced Front End Development Project
 ### Challenge #289
 
-This program was written to fullfil the following user stories as specified by the FCC curriculum.
+This program was written to fullfil the following user stories as specified by the [FCC curriculum](https://www.freecodecamp.org/challenges/build-a-javascript-calculator).
 
 **User Story One:**  I can add, subtract, multiply and divide two numbers.  
 **User Story Two:** I can clear the input field with a clear button.  
@@ -14,4 +14,4 @@ This program was written to fullfil the following user stories as specified by t
 
 ### How to run
 To use the JavaScript Calculator simply download or clone this repository and open `index.html` in a browser.  
-This program works for basic addition, subtraction, multiplication and division. However does not currently support the addition, subtraction, multiplication or division of negative numbers.
+This program works for basic addition, subtraction, multiplication and division of positive numbers.
