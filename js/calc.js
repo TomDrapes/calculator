@@ -79,7 +79,8 @@ $(document).ready(function(){
             }
         }
         orderOperations("*", "/");
-        orderOperations("+", "-");        
+        orderOperations("+", "-");
+                
         if(elements[0].toString().length > 14){
             display = elements[0].slice(0, 10);
             equation = elements[0].slice(0, 10);            

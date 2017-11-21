@@ -1,8 +1,7 @@
 body{
-    /*background-color: rgb(82, 82, 124);*/
-    /*background-color: rgb(190, 228, 141);*/
     background-color: rgb(20, 206, 209);
-    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
     padding-left:38%;
     padding-top: 8%;
     
@@ -13,19 +12,14 @@ body{
     width: 302px;
     height: 476px;
     padding: 6px 0px;
-    /*border: 1px inset rgb(214, 214, 214);*/
-    border-radius: 15px;
-    /*box-shadow: 10px 10px 5px rgb(97, 116, 72);*/
-    /*box-shadow:3px 3px 5px 2px rgb(196, 196, 196) inset, 10px 10px 5px rgb(97, 116, 72);*/
+    border-radius: 15px;    
     box-shadow:3px 3px 5px 2px rgb(196, 196, 196) inset, 10px 10px 15px rgb(14, 143, 143);
     margin: 5px;
-    
-    
 }
+
 h6{
     margin-left: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    
+    font-family: Arial, Helvetica, sans-serif;    
     font-weight: bold;
     
 }
@@ -42,29 +36,28 @@ h6{
     background-color: rgb(120, 148, 129);
     border: 2px inset rgb(90, 112, 97);
     border-radius: 5px;
-    
 }
-#buttons{
-    /*text-align: center;*/
-    padding: 6px;
-    
 
+#buttons{
+    padding: 6px;
 }
+
 #equals{
-    /*float:right;*/
     width:276px;
     height:40px;
     padding: 0px;
-    
 }
+
 #clear{
     background-color: rgb(173, 77, 77);
     border-bottom: 5px solid;
     border-bottom-color: rgb(109, 49, 49);
 }
+
 #clear:active{
     border-bottom: 0px;
 }
+
 .button{
     background-color: rgb(93, 91, 114);
     color: white;
@@ -86,7 +79,6 @@ h6{
 }
 
 a{
-    color: rgb(173, 77, 77);
     color: rgb(0, 0, 0);
     font-size: 16px;
     font-weight: bold;
@@ -94,4 +86,25 @@ a{
 a:hover{
     color: white;
     text-decoration: none;
+}
+
+/* Layout for screen width < 420px */
+@media (min-width: 200px){
+    body{
+        padding-left: 3%;
+    }
+}
+
+/* Layout for screen width > 420px
+@media (min-width: 420px){
+    body{
+        padding-left: 20%;
+    }
+}
+
+/* Layout for screen width > 600px */
+@media (min-width: 600px){
+    body{
+        padding-left: 38%;
+    }
 }
