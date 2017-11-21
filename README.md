@@ -8,3 +8,6 @@ This program was written to fullfil the following user stories as specified by t
 **User Story One:**  I can add, subtract, multiply and divide two numbers.  
 **User Story Two:** I can clear the input field with a clear button.  
 **User Story Three:** I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.  
+
+### Screenshot
+![screen](https://github.com/doctorApes/calculator/blob/master/img/Screen%20Shot%202017-11-21%20at%202.50.28%20PM.png)
