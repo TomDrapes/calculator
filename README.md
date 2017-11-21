@@ -11,3 +11,7 @@ This program was written to fullfil the following user stories as specified by t
 
 ### Screenshot
 ![screen](https://github.com/doctorApes/calculator/blob/master/img/Screen%20Shot%202017-11-21%20at%202.50.28%20PM.png)
+
+### How to run
+To use the JavaScript Calculator simply download or clone this repository and open `index.html` in a browser.  
+This program works for basic addition, subtraction, multiplication and division. However does not currently support the addition, subtraction, multiplication or division of negative numbers.
