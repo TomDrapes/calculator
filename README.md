@@ -1,7 +1,7 @@
 # JavaScript Calculator
 
-##FreeCodeCamp Advanced Front End Development Project
-###Challenge #289
+## FreeCodeCamp Advanced Front End Development Project\n
+### Challenge #289
 
 This program was written to fullfil the following user stories as specified by the FCC curriculum.
 
