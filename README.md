@@ -1,11 +1,6 @@
 # JavaScript Calculator
-<<<<<<< HEAD
-
-## FreeCodeCamp Advanced Front End Development Project\n
-=======
 by Tom Drapes
 ## FreeCodeCamp Advanced Front End Development Project
->>>>>>> myBranch0
 ### Challenge #289
 
 This program was written to fullfil the following user stories as specified by the FCC curriculum.
